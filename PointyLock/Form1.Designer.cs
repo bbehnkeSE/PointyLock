@@ -55,6 +55,7 @@
             addBtn.TabIndex = 1;
             addBtn.Text = "Add";
             addBtn.UseVisualStyleBackColor = true;
+            addBtn.Click += addBtn_Click;
             // 
             // browseBtn
             // 
@@ -64,16 +65,25 @@
             browseBtn.TabIndex = 2;
             browseBtn.Text = "Browse";
             browseBtn.UseVisualStyleBackColor = true;
+            browseBtn.Click += browseBtn_Click;
             // 
             // fileListBx
             // 
+            fileListBx.AllowDrop = true;
             fileListBx.BackColor = SystemColors.ScrollBar;
+            fileListBx.ForeColor = SystemColors.WindowText;
             fileListBx.FormattingEnabled = true;
+            fileListBx.HorizontalScrollbar = true;
             fileListBx.ItemHeight = 21;
             fileListBx.Location = new Point(12, 105);
             fileListBx.Name = "fileListBx";
+            fileListBx.RightToLeft = RightToLeft.No;
             fileListBx.Size = new Size(443, 403);
             fileListBx.TabIndex = 3;
+            fileListBx.Click += fileListBx_Click;
+            fileListBx.DragDrop += fileListBx_DragDrop;
+            fileListBx.DragEnter += fileListBx_DragEnter;
+            fileListBx.DragLeave += fileListBx_DragLeave;
             // 
             // encryptBtn
             // 

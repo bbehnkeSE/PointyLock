@@ -19,6 +19,10 @@ namespace PointyLock
 
         private void addBtn_Click(object sender, EventArgs e)
         {
+            if (dirPathBx.Text.Length == 0)
+            {
+                return;
+            }
             dirList.Add(dirPathBx.Text);
 
             fileListBx.DataSource = null;
@@ -42,7 +46,22 @@ namespace PointyLock
 
         private void browseBtn_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog openFD = new OpenFileDialog())
+            {
+                openFD.RestoreDirectory = true;
 
+                if (openFD.ShowDialog() == DialogResult.OK)
+                {
+                    string fileName = openFD.FileName;
+                    FileInfo f = new FileInfo(fileName);
+                    string filePath = f.FullName;
+
+                    dirList.Add(filePath);
+
+                    fileListBx.DataSource = null;
+                    fileListBx.DataSource = dirList;
+                }
+            }
         }
 
         private void fileListBx_DragDrop(object sender, DragEventArgs e)

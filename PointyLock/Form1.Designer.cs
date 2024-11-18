@@ -40,18 +40,20 @@
             // dirPathBx
             // 
             dirPathBx.AcceptsReturn = true;
-            dirPathBx.Location = new Point(12, 12);
+            dirPathBx.Location = new Point(9, 10);
+            dirPathBx.Margin = new Padding(2);
             dirPathBx.Name = "dirPathBx";
             dirPathBx.PlaceholderText = "Enter path to a file or directory";
-            dirPathBx.Size = new Size(443, 29);
+            dirPathBx.Size = new Size(345, 25);
             dirPathBx.TabIndex = 0;
             // 
             // addBtn
             // 
             addBtn.AutoSize = true;
-            addBtn.Location = new Point(12, 47);
+            addBtn.Location = new Point(9, 38);
+            addBtn.Margin = new Padding(2);
             addBtn.Name = "addBtn";
-            addBtn.Size = new Size(108, 31);
+            addBtn.Size = new Size(84, 29);
             addBtn.TabIndex = 1;
             addBtn.Text = "Add";
             addBtn.UseVisualStyleBackColor = true;
@@ -59,9 +61,10 @@
             // 
             // browseBtn
             // 
-            browseBtn.Location = new Point(351, 48);
+            browseBtn.Location = new Point(273, 39);
+            browseBtn.Margin = new Padding(2);
             browseBtn.Name = "browseBtn";
-            browseBtn.Size = new Size(104, 30);
+            browseBtn.Size = new Size(81, 28);
             browseBtn.TabIndex = 2;
             browseBtn.Text = "Browse";
             browseBtn.UseVisualStyleBackColor = true;
@@ -74,11 +77,12 @@
             fileListBx.ForeColor = SystemColors.WindowText;
             fileListBx.FormattingEnabled = true;
             fileListBx.HorizontalScrollbar = true;
-            fileListBx.ItemHeight = 21;
-            fileListBx.Location = new Point(12, 105);
+            fileListBx.ItemHeight = 17;
+            fileListBx.Location = new Point(9, 85);
+            fileListBx.Margin = new Padding(2);
             fileListBx.Name = "fileListBx";
             fileListBx.RightToLeft = RightToLeft.No;
-            fileListBx.Size = new Size(443, 403);
+            fileListBx.Size = new Size(345, 327);
             fileListBx.TabIndex = 3;
             fileListBx.Click += fileListBx_Click;
             fileListBx.DragDrop += fileListBx_DragDrop;
@@ -87,18 +91,21 @@
             // 
             // encryptBtn
             // 
-            encryptBtn.Location = new Point(12, 514);
+            encryptBtn.Location = new Point(11, 416);
+            encryptBtn.Margin = new Padding(2);
             encryptBtn.Name = "encryptBtn";
-            encryptBtn.Size = new Size(108, 31);
+            encryptBtn.Size = new Size(84, 29);
             encryptBtn.TabIndex = 4;
             encryptBtn.Text = "Encrypt";
             encryptBtn.UseVisualStyleBackColor = true;
+            encryptBtn.Click += encryptBtn_Click;
             // 
             // decryptBtn
             // 
-            decryptBtn.Location = new Point(351, 514);
+            decryptBtn.Location = new Point(273, 416);
+            decryptBtn.Margin = new Padding(2);
             decryptBtn.Name = "decryptBtn";
-            decryptBtn.Size = new Size(104, 31);
+            decryptBtn.Size = new Size(81, 29);
             decryptBtn.TabIndex = 5;
             decryptBtn.Text = "Decrypt";
             decryptBtn.UseVisualStyleBackColor = true;
@@ -106,17 +113,18 @@
             // label1
             // 
             label1.BorderStyle = BorderStyle.Fixed3D;
-            label1.Location = new Point(12, 91);
+            label1.Location = new Point(9, 74);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(443, 2);
+            label1.Size = new Size(345, 2);
             label1.TabIndex = 6;
             // 
             // PointyLock
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(467, 556);
+            ClientSize = new Size(363, 450);
             Controls.Add(label1);
             Controls.Add(decryptBtn);
             Controls.Add(encryptBtn);
@@ -124,9 +132,8 @@
             Controls.Add(browseBtn);
             Controls.Add(addBtn);
             Controls.Add(dirPathBx);
-            Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Font = new Font("Segoe UI", 10F);
             FormBorderStyle = FormBorderStyle.Fixed3D;
-            Margin = new Padding(4);
             Name = "PointyLock";
             Text = "PointyLock";
             ResumeLayout(false);

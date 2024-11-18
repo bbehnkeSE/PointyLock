@@ -95,5 +95,10 @@ namespace PointyLock
                 fileListBx.Items.Add("Drag and drop items here...");
             }
         }
+
+        private void encryptBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

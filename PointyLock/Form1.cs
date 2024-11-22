@@ -98,7 +98,14 @@ namespace PointyLock
 
         private void encryptBtn_Click(object sender, EventArgs e)
         {
+            CreatePassword createPassword = new CreatePassword();
+            createPassword.ShowDialog();
+        }
 
+        private void decryptBtn_Click(object sender, EventArgs e)
+        {
+            DecryptionForm decryptionForm = new DecryptionForm();
+            decryptionForm.ShowDialog();
         }
     }
 }

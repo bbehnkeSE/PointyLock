@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace PointyLock
 {
-    public partial class CreatePassword : Form
+    public partial class DecryptionForm : Form
     {
-        public CreatePassword()
+        public DecryptionForm()
         {
             InitializeComponent();
         }
 
-        private void passwordConfirmCancelBtn_Click(object sender, EventArgs e)
+        private void decryptCancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }

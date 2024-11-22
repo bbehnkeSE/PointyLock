@@ -109,6 +109,7 @@
             decryptBtn.TabIndex = 5;
             decryptBtn.Text = "Decrypt";
             decryptBtn.UseVisualStyleBackColor = true;
+            decryptBtn.Click += decryptBtn_Click;
             // 
             // label1
             // 

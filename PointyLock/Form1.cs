@@ -2,7 +2,7 @@ namespace PointyLock
 {
     public partial class PointyLock : Form
     {
-        List<string> dirList = new List<string>();
+        public static List<string> dirList = new List<string>();
         string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
         public PointyLock()
         {

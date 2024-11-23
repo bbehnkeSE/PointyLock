@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Tracing;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,10 +26,30 @@ namespace PointyLock
 
         private void passwordConfirmBtn_Click(object sender, EventArgs e)
         {
-            if (passwordTextBx.Text == passwordConfirmTextBx.Text)
+            if (passwordTextBx.Text != passwordConfirmTextBx.Text)
             {
-                byte[] hash = Encrypt.HashPassword(passwordTextBx.Text);
-                System.Diagnostics.Debug.WriteLine(Convert.ToHexString(hash));
+                return;
+            }
+            byte[] hash = Encrypt.HashPassword(passwordTextBx.Text);
+            System.Diagnostics.Debug.WriteLine(Convert.ToHexString(hash));
+
+            foreach (string path in PointyLock.dirList)
+            {
+                if (Directory.Exists(path))
+                {
+                    string[] files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
+                    foreach (string file in files)
+                    {
+                        Encrypt.EncryptPath(file);
+                    }
+                }
+                else if (File.Exists(path))
+                {
+                    Encrypt.EncryptPath(path);
+                }
+                else
+                    return;
+
             }
         }
     }

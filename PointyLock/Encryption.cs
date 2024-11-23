@@ -18,5 +18,10 @@ namespace PointyLock
 
             return hash;
         }
+
+        public static void EncryptPath(string path)
+        {
+            
+        }
     }
 }

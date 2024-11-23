@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Tracing;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,15 @@ namespace PointyLock
         private void passwordConfirmCancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void passwordConfirmBtn_Click(object sender, EventArgs e)
+        {
+            if (passwordTextBx.Text == passwordConfirmTextBx.Text)
+            {
+                byte[] hash = Encrypt.HashPassword(passwordTextBx.Text);
+                System.Diagnostics.Debug.WriteLine(Convert.ToHexString(hash));
+            }
         }
     }
 }

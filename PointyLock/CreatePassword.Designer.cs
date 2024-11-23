@@ -61,6 +61,7 @@
             passwordConfirmBtn.TabIndex = 2;
             passwordConfirmBtn.Text = "Encrypt";
             passwordConfirmBtn.UseVisualStyleBackColor = true;
+            passwordConfirmBtn.Click += passwordConfirmBtn_Click;
             // 
             // passwordConfirmCancelBtn
             // 

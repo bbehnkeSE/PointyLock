@@ -14,6 +14,7 @@ namespace PointyLock
             }
         }
 
+        // TODO: Delete old files after encryption/decryption
         public static void EncryptFile(string path, byte[] key)
         {
             if (key.Length != 16 && key.Length != 24 && key.Length != 32)
@@ -56,7 +57,6 @@ namespace PointyLock
                     aes.Key = key;
                     aes.IV = iv;
 
-                    // Decrypt the file
                     using (CryptoStream cryptoStream = new CryptoStream(inputStream, aes.CreateDecryptor(), CryptoStreamMode.Read))
                     using (FileStream outputStream = new FileStream(path.Remove(path.Length - 4), FileMode.Create, FileAccess.Write))
                     {

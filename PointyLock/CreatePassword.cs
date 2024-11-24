@@ -32,6 +32,7 @@ namespace PointyLock
             }
             byte[] hash = Encrypt.HashPassword(passwordTextBx.Text);
             System.Diagnostics.Debug.WriteLine(Convert.ToHexString(hash));
+            System.Diagnostics.Debug.WriteLine(hash.Length);
 
             foreach (string path in PointyLock.dirList)
             {
@@ -40,16 +41,15 @@ namespace PointyLock
                     string[] files = Directory.GetFiles(path, "*.*", SearchOption.AllDirectories);
                     foreach (string file in files)
                     {
-                        Encrypt.EncryptPath(file);
+                        Encrypt.EncryptFile(file, hash);
                     }
                 }
                 else if (File.Exists(path))
                 {
-                    Encrypt.EncryptPath(path);
+                    Encrypt.EncryptFile(path, hash);
                 }
                 else
                     return;
-
             }
         }
     }

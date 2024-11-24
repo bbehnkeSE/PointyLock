@@ -63,6 +63,7 @@
             decryptBtn.TabIndex = 2;
             decryptBtn.Text = "Decrypt";
             decryptBtn.UseVisualStyleBackColor = true;
+            decryptBtn.Click += decryptBtn_Click;
             // 
             // decryptCancelBtn
             // 
